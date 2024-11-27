@@ -18,7 +18,7 @@ export const Input = ({name,value,placeholder,onChange,style,visi}:Props) => {
 
     const togglePasswordVisibility = () => {      
         setShowPassword(!showPassword);
-      };
+    };
 //char js
     return(
 
