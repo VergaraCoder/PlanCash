@@ -81,9 +81,9 @@
 
 .register{
     color: rgb(255, 255, 255);
-    font-size: 15px;
-    background-color: #48e;
+    font-size: 10px;
+    background-color: rgba(68, 136, 238, 0.733);
     padding: 10px;
     border-radius: 10px;
-    
+    text-align: center;
 }

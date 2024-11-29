@@ -10,8 +10,8 @@ export const Router= createBrowserRouter([
         path: "/pages",
         Component: Layout,
         children: [
-          {path: "home",Component: Home},
-          {path: "register",Component: Main},
+          {path: "register",Component: Home},
+          {path: "login",Component: Main},
         ]
       },
 ]);

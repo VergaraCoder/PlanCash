@@ -71,8 +71,8 @@ export const Form = () =>{
                         />
                         <Button style={style.button}/>
 
-                        <NavLink className={style.register} to="/pages/register">
-                            Ir al Register
+                        <NavLink className={style.register} to="/pages/login">
+                            ¿ Ya tienes cuenta ? <br/> Iniciar sesión
                         </NavLink>
                 </form> 
                 </div>
