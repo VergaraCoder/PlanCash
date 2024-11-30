@@ -4,10 +4,13 @@ import { createRoot } from 'react-dom/client'
 import { Navegation } from './navegation/navegation.tsx'
 import { Router } from './routes/routes.ts'
 import { RouterProvider } from 'react-router'
+import { Provider } from 'react-redux'
+import { store } from './redux/store/app.store.tsx'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <Navegation/>
-    <RouterProvider router={Router} />
+    <Provider store={store}>
+      <RouterProvider router={Router} />
+    </Provider>
   </StrictMode>,
 )

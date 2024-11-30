@@ -21,13 +21,14 @@ export const Input = ({name,value,placeholder,onChange,style,visi}:Props) => {
     };
 //char js
     return(
-
         <div className={style}>
         <input
           type={showPassword==false || visi==false ? 'text' : 'password'} 
           name={name}
           placeholder={placeholder}
           className={style}
+          value={value}
+          onChange={onChange}
         />
 
         {visi ?

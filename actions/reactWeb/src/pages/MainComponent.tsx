@@ -18,8 +18,8 @@ export const Main = () =>{
                 </p>
 
 
-                <NavLink to="/pages/home" className={style.link}>
-                    Volver a home
+                <NavLink to="/pages/register" className={style.link}>
+                    Volver a register
                 </NavLink>
 
             </div>

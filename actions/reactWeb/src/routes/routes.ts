@@ -11,7 +11,7 @@ export const Router= createBrowserRouter([
         Component: Layout,
         children: [
           {path: "register",Component: Home},
-          {path: "login",Component: Main},
+          {path: "home",Component: Main},
         ]
       },
 ]);

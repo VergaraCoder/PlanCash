@@ -7,7 +7,7 @@ interface Props{
 
 export const Button = ({onClick,style}:Props) => {
     return(
-        <button className={style} >
+        <button className={style} onClick={onClick} >
             Enviar
         </button>
     );
