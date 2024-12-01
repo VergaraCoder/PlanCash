@@ -28,6 +28,8 @@ export const Input = ({name,value,placeholder,onChange,style,visi}:Props) => {
           name={name}
           placeholder={placeholder}
           className={style}
+          value={value}
+          onChange={onChange}
         />
 
         {visi ?
