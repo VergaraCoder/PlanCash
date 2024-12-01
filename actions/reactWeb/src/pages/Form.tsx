@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { Input } from '../components/input';
 import style from './form.module.css';
 import { Button } from '../components/button';
-import { Navigate, NavLink } from 'react-router';
+import { Navigate, NavigateFunction, NavLink, useNavigate } from 'react-router';
 import { senData } from '../scripts/register/sendData';
 
 interface Data{
@@ -22,6 +22,9 @@ export const Form = () =>{
     const [error,setError] = useState("");
 
 
+    const navigate:NavigateFunction = useNavigate();
+
+
     const handleChange=(e:ChangeEvent<HTMLInputElement>) => {
         console.log(form);
         
@@ -35,12 +38,21 @@ export const Form = () =>{
         e.preventDefault(); 
         console.log(form);
         
-        await senData({
+        const response : boolean =await senData({
             name:form.name,
             email:form.email,
             password:form.password
-        },setError);
-        return <Navigate to={"/home"} />
+        });
+
+        if(!response){
+            setError("EL EMAIL YA EXISTE");
+            setTimeout(()=>{
+                setError("");
+            },2000);
+        }
+        else{
+            navigate("/pages/login");
+        }
       };
 
 

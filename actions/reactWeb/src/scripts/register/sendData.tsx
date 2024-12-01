@@ -1,11 +1,6 @@
 
-export const senData=async (data:any,setError:any) => {
+export const senData=async (data:any) => {
     try{
-
-        console.log("the url is");
-        
-        console.log(import.meta.env.VITE_BASE_URL);
-        
         const response : Response= await fetch(`${import.meta.env.VITE_BASE_URL}/user`,{
             method:"POST",
             headers:{
@@ -14,16 +9,12 @@ export const senData=async (data:any,setError:any) => {
             body:JSON.stringify(data)
         });
         if(!response.ok){
-            throw new Error("Los datos son incorrectos");
+           return false;
         }
         await response.json();
 
         return true;
-
     }catch(err:any){
-        setError(err.message);
-        setTimeout(()=>{
-            setError("");
-        },2000);
+        return false;
     }
 }
