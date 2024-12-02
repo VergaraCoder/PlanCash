@@ -24,10 +24,10 @@ export const Input = ({name,value,placeholder,onChange,style,visi}:Props) => {
 
         <div className={style}>
         <input
-          type={showPassword==false || visi==false ? 'text' : 'password'} 
+          type={showPassword==false || visi==false? 'text' : 'password'} 
           name={name}
           placeholder={placeholder}
-          className={style}
+          style={{width:"100%",height:"100%",outline:"none",border:"none",backgroundColor:""}}
           value={value}
           onChange={onChange}
         />

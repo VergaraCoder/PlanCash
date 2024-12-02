@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { Input } from '../components/input';
 import style from './form.module.css';
 import { Button } from '../components/button';
-import { Navigate, NavigateFunction, NavLink, useNavigate } from 'react-router';
+import { NavigateFunction, NavLink, useNavigate } from 'react-router-dom';
 import { senData } from '../scripts/register/sendData';
 
 interface Data{
@@ -11,7 +11,7 @@ interface Data{
     password:string
 }
 
-export const Form = () =>{
+export const FormUse = () => {
 
     const [form,setForm]= useState<Data>({
         email:"",
@@ -102,7 +102,7 @@ export const Form = () =>{
                         null
                     }
 
-                        <Button style={style.button}/>
+                        <Button style={style.button} text='Enviar'/>
 
                         <NavLink className={style.register} to="/pages/login">
                             ¿ Ya tienes cuenta ? <br/> Iniciar sesión
