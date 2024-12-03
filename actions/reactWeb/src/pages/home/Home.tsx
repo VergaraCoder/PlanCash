@@ -5,6 +5,7 @@ import style from './home.module.css';
 import { Modal } from "../../components/modal";
 import { createCategories } from "../../utils/interfaces/createCategorie";
 import { createCategorie } from "../../scripts/home/categories/createCategorie";
+import { Navigate, NavigateFunction, Navigation, useNavigate, useNavigation } from "react-router";
 
 interface DataHome{
     budget:number;
@@ -39,6 +40,8 @@ export const Home = () =>{
 
     const [error,setError] = useState("");
 
+    const navegation:NavigateFunction=useNavigate();
+
 
 
 
@@ -72,14 +75,20 @@ export const Home = () =>{
             return null;
         }
         else{
+            console.log("enter data");
+            
             return data.map((item)=>{
                return( 
-                    <button className={style.categorie}>
+                    <button className={style.categorie} onClick={()=>viewCategory(item.id)} >
                         {item.name}
                     </button>
                 )
             });
         }
+    }
+
+    const viewCategory = (idCategory:number) =>{
+        navegation("/pages/category",{state:{idCategory:idCategory}});
     }
     
     const cancelCreationCategorie = () =>{
@@ -92,11 +101,17 @@ export const Home = () =>{
             <div className={style[classBigContainer]}></div>
 
             <div className={style.containerBudget}>
-                <h2>
+                <h2 className={style.titleBudget}>
                     Monto general: <br/>
-                {data.budget}
-
+                     <h3 className={style.amountGeneral}>{data.budget ? data.budget : 0}
+                     </h3>
+                     
+                    <div  className={style.addAmount}>
+                                <button >+</button>
+                    </div>
                 </h2>
+
+
             
             </div>
 

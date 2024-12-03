@@ -36,7 +36,9 @@ export const FormUse = () => {
 
     const handleSendData = async (e: FormEvent<HTMLFormElement>) => {
         e.preventDefault(); 
-        console.log(form);
+        
+        console.log("ENTER FOR SEND dATA");
+        
         
         const response : boolean =await senData({
             name:form.name,
@@ -51,6 +53,8 @@ export const FormUse = () => {
             },2000);
         }
         else{
+            console.log("VAMOS PARA LA PAGINA DE LOGIN");
+            
             navigate("/pages/login");
         }
       };
@@ -96,13 +100,17 @@ export const FormUse = () => {
                     {
                         error ?
                             <p>
-                                {error}
+                                {error} MALLLLL
                             </p>
                         :
                         null
                     }
 
-                        <Button style={style.button} text='Enviar'/>
+                    <input  
+                        type='submit'
+                        className={style.button}
+                        value={"Resgistrarme"}
+                    />
 
                         <NavLink className={style.register} to="/pages/login">
                             ¿ Ya tienes cuenta ? <br/> Iniciar sesión

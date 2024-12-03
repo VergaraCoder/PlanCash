@@ -58,24 +58,25 @@
 
 
 .button:hover{
-    width: 60%;
-    height: 10%;
     border-bottom: none;
     outline: none;
     border: 0;
     border-radius: 15px;
     background-color: white;
     cursor: pointer;
+    color:#48e;
 }
 
 .button{
     width: 60%;
-    height: 300px;
+    height: 200px;
     border-bottom: none;
     outline: none;
     border: 0;
     border-radius: 15px;
-    background-color: rgba(27, 21, 21, 0.756);
+    background-color: #48e;
+    border: 3px solid white;
+    color: white;
 }
 
 .register{

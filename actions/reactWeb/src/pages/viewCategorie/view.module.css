@@ -1,0 +1,47 @@
+
+.containerGeneral{
+    width: 100vw;
+    height: 90vh;
+}
+
+.containerTitles{
+    width: 100%;
+    height: 20%;
+    background-color: orange;
+}
+
+.containerExpenseRecords{
+    width: 100%;
+    height: 70%;
+    background-color: #48e;
+}
+
+
+.containerModal{
+    position:absolute;
+    width: 70%;
+    height: 40%;
+    top: 15%;
+    left:15%;
+    background-color: #f0f0f0;
+    padding: 20px;
+}
+
+
+.containerModalCancel{
+   display: none;
+}
+
+.inputNormla{
+
+}
+
+
+
+.formModal{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    justify-content: space-between;
+}

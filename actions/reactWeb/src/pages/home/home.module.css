@@ -34,6 +34,16 @@
     align-items: center;
 }
 
+.titleBudget{
+    position: relative;
+}
+
+.addAmount{
+    position: absolute;
+    top: -40%;
+    right: -10%;
+}
+
 
 .containerCategories{
     width: 95%;

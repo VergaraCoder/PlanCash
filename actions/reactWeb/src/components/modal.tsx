@@ -3,6 +3,7 @@ import { Input } from "./input";
 import { Button } from "./button";
 import DatePicker from "react-datepicker";
 import { createCategorie } from "../scripts/home/categories/createCategorie";
+import { Navigation, useNavigation } from "react-router";
 
 
 interface PropsModal{
@@ -20,12 +21,6 @@ export const Modal = ({form,setForm,styleInput, styleContainer, styleButton, sty
     }
 
     const [date,setDate] = useState<any>(new Date());
-
-
-    // const cancelCreationCategori = () => {
-    //     window.location.reload();
-    // }
-
 
 
     const handleSendData = async (e:FormEvent<HTMLFormElement>) =>{
@@ -53,11 +48,6 @@ export const Modal = ({form,setForm,styleInput, styleContainer, styleButton, sty
             
         }
     }
-
-
-
-
-
 
     return(
         <div className={styleContainer}>
