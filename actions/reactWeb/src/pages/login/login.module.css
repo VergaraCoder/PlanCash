@@ -102,9 +102,7 @@
 } */
 
 
-.button:hover{
-    width: 60%;
-    height: 10%;
+.button:focus{
     border-bottom: none;
     outline: none;
     border: 0;

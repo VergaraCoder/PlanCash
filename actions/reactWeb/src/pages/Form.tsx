@@ -2,7 +2,7 @@ import { ChangeEvent, FormEvent, useState } from 'react';
 import { Input } from '../components/input';
 import style from './form.module.css';
 import { Button } from '../components/button';
-import { NavigateFunction, NavLink, useNavigate } from 'react-router-dom';
+import { Link, NavigateFunction, NavLink, useNavigate } from 'react-router-dom';
 import { senData } from '../scripts/register/sendData';
 
 interface Data{
@@ -112,9 +112,9 @@ export const FormUse = () => {
                         value={"Resgistrarme"}
                     />
 
-                        <NavLink className={style.register} to="/pages/login">
+                        <Link className={style.register} to="/pages/login">
                             ¿ Ya tienes cuenta ? <br/> Iniciar sesión
-                        </NavLink>
+                        </Link>
                 </form> 
                 </div>
             </div>

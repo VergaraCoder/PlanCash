@@ -1,16 +1,13 @@
 import { dataForm } from "../../utils/interfaces/dataForm";
 
 
-export const SendCategorie = async (data:any) => {
-    console.log("the data id");
-    console.log(data);
-    
+export const SendBills = async (dataBills:any) => {
     const responseRequest:Response = await fetch(`${import.meta.env.VITE_BASE_URL}/bills`,{
         method: 'POST',
         headers:{
             'Content-Type': 'application/json',
         },
-        body:JSON.stringify(data),
+        body:dataBills,
         credentials:"include"
     });
 

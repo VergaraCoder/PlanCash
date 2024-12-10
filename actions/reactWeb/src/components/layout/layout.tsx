@@ -22,7 +22,7 @@ export const Layout = ({children}:Props) =>{
     return(
         <div className={style.father} >
             <header className={style.header}>
-                <h1>Welcome Form</h1>
+                <h1>PlanCash</h1>
                 <button onClick={handleLogOut}>
                     Log out
                 </button>

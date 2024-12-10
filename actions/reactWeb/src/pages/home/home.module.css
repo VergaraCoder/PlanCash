@@ -2,9 +2,12 @@
 .containerGeneral{
     width: 100vw;
     height: 80vh;
-    background-color: rgba(59, 59, 63, 0.884);
+    background-color: rgba(255, 255, 255, 0.884);
     position: relative;
     z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .containerGeneral2{
@@ -42,29 +45,86 @@
     position: absolute;
     top: -40%;
     right: -10%;
+    display: flex;
+    flex-direction: column;
 }
 
 
 .containerCategories{
     width: 95%;
-    height: 80%;
+    height: max-content;
     display: flex;
-    flex-direction: row;
-    gap: 20px;
+    gap: 10px;
     padding: 10px;
+    flex-wrap: wrap;
+    justify-content: center;
 }
 
 
 .categorie{
     width:30%;
-    height: 15%;
-    background-color: white;
+    height: 12vh;
+    background-color: #48e;
     border: none;
     outline: none;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight: 600;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 .categorie:focus{
     outline: none;
+}
+
+
+.createCategorieButton{
+    width: 40vw;
+    border: none;
+    outline: none;
+    height: 5vh;
+    background-color: rgba(68, 136, 238, 0.76);
+    border-radius: 4px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 16px;
+}
+
+.createCategorieButton:hover{
+    border: none;
+    outline: none;
+    border-radius: 10px;
+}
+
+.createCategorieButton:focus{
+    border: none;
+    outline: none;
+}
+
+.showButtonEstadistic{
+    width: max-content;
+    height: 15%;
+    border: none;
+    outline: none;
+    font-size: 50%;
+}
+
+
+.showButtonEstadistic:focus{
+    border: none;
+    outline: none;   
+}
+
+.inputAddAmount{
+    display: none;
+}
+
+
+.inputAddAmountVisible{
+    display: flex;
 }
 
 
@@ -131,5 +191,7 @@
     border:none;
     border-radius: 5px;
 }
+
+
 
 

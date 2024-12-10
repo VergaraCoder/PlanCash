@@ -3,20 +3,30 @@
 
 export const returnBudget = async () =>{
     try{
-        const dataBudget:Response= await fetch(`${import.meta.env.VITE_BASE_URL}/budget`,{
+        const dataBudget:Response= await fetch(`${import.meta.env.VITE_BASE_URL}/budget/one`,{
             credentials:"include"
         }
         );
         const responseBudget= await dataBudget.json();
-        console.log("the data is");
-        
         console.log(responseBudget);
-        console.log(responseBudget[0].id);
         
-        localStorage.setItem("budGet",JSON.stringify({
-            idBudget:responseBudget[0].id,
-            budget:responseBudget[0].generalAmount
+
+        // if(responseBudget.message){
+
+        // }
+        console.log("PASSSSSSS");
+
+        console.log("THE RESPONSE IS ");
+        console.log(responseBudget);
+        
+        
+        localStorage.setItem("budGetReal",JSON.stringify({
+            idBudget:responseBudget.id,
         }));
+
+        localStorage.setItem("budGet",JSON.stringify(responseBudget.generalAmount));
+
+        
         
         return responseBudget[0].generalAmount;
     }catch(err:any){

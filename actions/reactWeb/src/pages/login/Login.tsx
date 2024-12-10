@@ -5,6 +5,7 @@ import { Button } from "../../components/button";
 import { ChangeEvent, FormEvent, useState } from "react";
 import { LoginData } from "../../utils/interfaces/interfaceLogin";
 import { verifyData } from "../../scripts/login/verifyData";
+import { createBudGet } from "../../scripts/login/createBudGet";
 
 
 
@@ -39,6 +40,7 @@ export const Login = () => {
             },3000);
         }
         else{
+            const creatBudGet= await createBudGet();
             console.log("enter here");
             navigate("/pages/home");
         }

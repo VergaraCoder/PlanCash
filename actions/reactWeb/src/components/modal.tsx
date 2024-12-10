@@ -9,7 +9,7 @@ import { Navigation, useNavigation } from "react-router";
 interface PropsModal{
 }
 
-export const Modal = ({form,setForm,styleInput, styleContainer, styleButton, styleContainerButton,styleForm, styleInputDate, setError ,error, cancelCreation
+export const Modal = ({form,setForm,styleInput, styleContainer, styleButton, styleContainerButton,styleForm, styleInputDate, setError ,error, cancelCreation,restarValues, subtractGeneralAmount
 }:any) => {
 
 
@@ -31,14 +31,32 @@ export const Modal = ({form,setForm,styleInput, styleContainer, styleButton, sty
             console.log("enter Send Data");
 
             if(submit.name=="enviar"){
-                console.log("entramos");
+            
+                console.log(form);
                 
                 const response:boolean= await createCategorie({
                     name:form.name,
-                    amount:form.amount,
+                    amount:Number(form.amount),
                     dateEnd:form.dateEnd,
                     dateStart:form.dateStart
                 });
+
+                restarValues({
+                    name:"",
+                    dateStart:"",
+                    dateEnd:"",
+                    amount:0
+                });
+
+                const [data,setData]=subtractGeneralAmount;
+
+                setData((preven:any)=>({
+                    ...preven,
+                    budGet:preven.budGet - form.amount,
+                }));
+                const operation=data.budget-form.amount;
+                localStorage.setItem("budGet",JSON.stringify(operation));
+                window.location.reload();
             }
     }catch(err:any){
             setError(err.message);
